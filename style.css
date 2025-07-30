@@ -1,0 +1,54 @@
+/* Basic styling */
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: linear-gradient(to right, white, rgb(165, 141, 230)); 
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Layout CSS */
+.container{
+    max-width: 400px;
+    margin: auto;
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgb(0,0,0,0.15);
+    border-radius: 1px solid rgb(165, 141, 230);
+}
+
+.search{
+    display: flex; 
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.search input{
+    padding: 10px 15px;
+    width: 70%;
+    border: 1px solid white;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+}
+
+/* Button layout */
+.search button{
+    padding: 10px 15px;
+    border: none;
+    background-color: rgb(176, 155, 231);
+    color: black;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.35 ease;
+}
+
+
+
