@@ -1,5 +1,5 @@
 // Javascipt file for weather api integration
-const apiKey = 'bdf6dcd87ee7429c94375409252907'; // Replace with your actual WeatherAPI key
+const apiKey = ''; // Replace with actual WeatherAPI key
 
 async function getWeather() {
   const city = document.getElementById('cityInput').value.trim();
