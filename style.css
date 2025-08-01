@@ -1,54 +1,73 @@
-/* Basic styling */
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background: linear-gradient(to right, white, rgb(165, 141, 230)); 
-    text-align: center;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* CSS file for weather app styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f5f2e7, rgb(183, 148, 225)); 
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/* Layout CSS */
-.container{
-    max-width: 400px;
-    margin: auto;
-    background-color: white;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 12px 30px rgb(0,0,0,0.15);
-    border-radius: 1px solid rgb(165, 141, 230);
+.container {
+  max-width: 400px;
+  margin: auto;
+  background-color: #fffaf0; 
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid lavender;
 }
 
-.search{
-    display: flex; 
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.search input{
-    padding: 10px 15px;
-    width: 70%;
-    border: 1px solid white;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: white;
+.search input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #cfc4ab;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fefaf1;
 }
 
-/* Button layout */
-.search button{
-    padding: 10px 15px;
-    border: none;
-    background-color: rgb(176, 155, 231);
-    color: black;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.35 ease;
+.search button {
+  padding: 10px 15px;
+  border: none;
+  background-color: rgb(189, 120, 241); 
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.search button:hover {
+  background-color: purple;
+}
 
+.card {
+  margin-top: 20px;
+  text-align: center;
+}
 
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.error {
+  color: #c0392b;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+} 
