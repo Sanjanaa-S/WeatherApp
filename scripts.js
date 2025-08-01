@@ -1,40 +1,46 @@
-const apiKey = "";
+// Javascipt file for weather api integration
+const apiKey = 'bdf6dcd87ee7429c94375409252907'; // Replace with your actual WeatherAPI key
 
-async function getWeather(){
-    const city = getElementById("cityInput").value.trim();
-    const error = getElementById("error");
-    const card = getElementById("weatherCard");
-}
+async function getWeather() {
+  const city = document.getElementById('cityInput').value.trim();
+  const errorEl = document.getElementById('error');
+  const card = document.getElementById('weatherCard');
 
-errorE1.textContent='';
-card.classList
-card.innerHTML
+  errorEl.textContent = '';
+  card.classList.add('hidden');
+  card.innerHTML = '';
 
-if (!city){
-    errorE1.textContent = "Please enter city";
-}
+  if (!city) {
+    errorEl.textContent = 'Please enter a city name.';
+    return;
+  }
 
-try{
-    const response
-    ('https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}')
-    const data = response.json()
+  try {
+    const response = await fetch(
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+    );
+    const data = await response.json();
 
-    if(data.error){
-        throw data.error.message;
+    if (data.error) {
+      throw new Error(data.error.message);
     }
 
-    const{location, current} = data;
-    card.innerHTML = `
-    <h2> ${location.name}, ${location.country} </h2>
-    <img src="https:${current.condition.icon}"alt ="weather icon"/>
-    <p><strong> Condition:</strong> ${current.condition.text}</p>
-    <p><strong> Temperature:</strong> ${current.temp_c}</p>
-    <p><strong> Humidity:</strong> ${current.temp_c}
-    <p><strong> Wind: </strong>${current.wind_kph}
-    `
+    const { location, current } = data;
 
-    card.classList.remove("header")
-}
-except{
-    throw new error(data.error.message)
+    // Printing section
+    card.innerHTML = `
+      <h2>${location.name}, ${location.country}</h2>
+      <img src="https:${current.condition.icon}" alt="weather icon" />
+      <p><strong>Condition:</strong> ${current.condition.text}</p>
+      <p><strong>Temperature:</strong> ${current.temp_c}°C</p>
+      <p><strong>Humidity:</strong> ${current.humidity}%</p>
+      <p><strong>Wind:</strong> ${current.wind_kph} km/h</p>
+      <p><strong>Last Updated:</strong> ${current.last_updated}</p>
+    `;
+
+    card.classList.remove('hidden');
+  } catch (error) {
+    console.error("WeatherAPI Error:", error.message);
+    errorEl.textContent = error.message || 'Could not fetch weather data.';
+  }
 }
